@@ -2,6 +2,55 @@
     "title": "My Personal Modifications",
     "rules": [
         {
+            "description": "Change Home to Control+A and End to Control+E only in the terminal",
+            "manipulators": [
+                {   
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.Terminal$"
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "home"
+                        },
+                    "to": [
+                        {
+                            "key_code": "a",
+                            "modifiers": [
+                                "control"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                },
+                {   
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.apple\\.Terminal$"
+                            ]
+                        }
+                    ],
+                    "from": {
+                        "key_code": "end"
+                        },
+                    "to": [
+                        {
+                            "key_code": "e",
+                            "modifiers": [
+                                "control"
+                            ]
+                        }
+                    ],
+                    "type": "basic"
+                }
+            ]
+        },
+        {
             "description": "Change Home to ⌘ + ← and End to ⌘ + →",
             "manipulators": [
                 {
@@ -33,7 +82,7 @@
                     "type": "basic"
                 }
             ]
-        }
+        }        
     ]
 }
                         
